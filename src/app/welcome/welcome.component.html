@@ -6,9 +6,12 @@
 
 <div class="container">
   Click here to get a customized Welcome Page.
-  <button (click)="getWelcomeMessage()" class="&quot;btn btn-success">
+  <div class="space">
+  <button (click)="getHelloWorldBeanServiceWithParameter()" class="btn btn-success">
     Get Welcome Message
   </button>
+</div>
+
 </div>
 
 <div class="container" *ngIf="welcomeMessageFromService">

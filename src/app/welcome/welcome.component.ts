@@ -38,12 +38,28 @@ export class WelcomeComponent implements OnInit {
       (response) => this.handleSuccessfulResponse(response),
       error => this.handleErrorResponse(error)
       )
+    console.log('last line of getWelcomeMessage');
+
+    //console.log('get welcome');
+  }
+
+
+  getHelloWorldBeanServiceWithParameter() {
+    //console.log(this.service.executeHelloWorldBeanService());
+
+    this.service.executeHelloWorldBeanServiceWithPathVariable(this.name).subscribe(
+      //response =>  this.handleSuccessfulResponse(response)
+      (response) => this.handleSuccessfulResponse(response),
+      error => this.handleErrorResponse(error)
+      )
 
 
     console.log('last line of getWelcomeMessage');
 
     //console.log('get welcome');
   }
+
+
   handleSuccessfulResponse(response:any) {
     this.welcomeMessageFromService = response.message;
     //console.log(response);
