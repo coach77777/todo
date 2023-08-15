@@ -17,4 +17,8 @@ export class TodoDataService {
 
     //console.log("Execute Hello World BEAN Service")
   }
+  deleteTodo(username: any, id: any) {
+    return this.http.delete( `http://localhost:8080/users/${username}/todos/${id}`)
+
+  }
 }
