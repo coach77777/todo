@@ -6,6 +6,7 @@ import { Todo } from 'src/app/list-todos/list-todos.component';
   providedIn: 'root',
 })
 export class TodoDataService {
+
   constructor(private http: HttpClient) {}
 
   retrieveAllTodos(username: any) {
@@ -34,4 +35,11 @@ export class TodoDataService {
       todo
     );
   }
-}
+    createTodo(username: any, todo: any) {
+      return this.http.post(
+        `http://localhost:8080/users/${username}/todos}`,
+        todo
+      );
+  }
+
+  }
