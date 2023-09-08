@@ -20,7 +20,7 @@ export class WelcomeDataService {
   }
   //http://localhost:8080/hello-world/path-variable/in28minutes
 
-  executeHelloWorldServiceWithPathVariable(name:) {
+  executeHelloWorldServiceWithPathVariable(name:any) {
     // let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
 
     // let headers = new HttpHeaders({

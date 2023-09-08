@@ -18,7 +18,7 @@ import { Component, OnInit } from '@angular/core';//'./app.component';
 export class WelcomeComponent implements OnInit {
 
   message = 'Some Welcome Message'
-  welcomeMessageFromService
+  welcomeMessageFromService!: string
   name = ''
   //String message = "Some Welcome Message"
 
@@ -62,13 +62,13 @@ export class WelcomeComponent implements OnInit {
     //console.log('last line of getWelcomeMessage')
     //console.log("get welcome message");
   }
-  handleSuccessfulResponse(response){
+  handleSuccessfulResponse(response:any){
     this.welcomeMessageFromService = response.message
     //console.log(response);
     //console.log(response.message);
   }
 
-  handleErrorResponse(error) {
+  handleErrorResponse(error:any) {
     //console.log(error);
     //console.log(error.error);
     //console.log(error.error.message);

@@ -6,10 +6,11 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class HttpIntercepterBasicAuthService implements HttpInterceptor{
-
   constructor(
     private basicAuthenticationService : BasicAuthenticationService
+
   ) { }
+
 
   intercept(request: HttpRequest<any>, next: HttpHandler){
     // let username = 'in28minutes'
