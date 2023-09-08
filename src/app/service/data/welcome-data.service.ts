@@ -2,66 +2,51 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 export class HelloWorldBean {
-  constructor(public message: string) {}
+  constructor(public message:string){ }
 }
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class WelcomeDataService {
-  constructor(private http: HttpClient) {}
+
+  constructor(
+    private http:HttpClient
+  ) { }
 
   executeHelloWorldBeanService() {
-    return this.http.get<HelloWorldBean>(
-      'http://localhost:8080/hello-world-bean'
-    );
-    //console.log("Execute Hello World BEAN Service")
+    return this.http.get<HelloWorldBean>('http://localhost:8080/hello-world-bean');
+    //console.log("Execute Hello World Bean Service")
   }
+  //http://localhost:8080/hello-world/path-variable/in28minutes
 
-  executeHelloWorldBeanServiceWithPathVariable(name: any) {
-<<<<<<< HEAD
+  executeHelloWorldServiceWithPathVariable(name:) {
     // let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
 
     // let headers = new HttpHeaders({
-    //   Authorization: basicAuthHeaderString,
-    // });
+    //     Authorization: basicAuthHeaderString
+    //   })
 
     return this.http.get<HelloWorldBean>(
       `http://localhost:8080/hello-world/path-variable/${name}`,
-     //{headers}
-    );
-    //console.log("Execute Hello World BEAN Service")
+      //{headers}
+      );
+    //console.log("Execute Hello World Bean Service")
   }
+
   // createBasicAuthenticationHttpHeader() {
-  //   let username = 'craig';
-  //   let password = 'puppy';
-  //   let basicAuthHeaderString =
-  //     'Basic ' + window.btoa(username + ':' + password);
+  //   let username = 'in28minutes'
+  //   let password = 'dummy'
+  //   let basicAuthHeaderString = 'Basic ' + window.btoa(username + ':' + password);
   //   return basicAuthHeaderString;
   // }
-=======
-    let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
+  //Access to XMLHttpRequest at
+  //'http://localhost:8080/hello-world/path-variable/in28minutes'
+  //from origin 'http://localhost:4200' has been blocked by CORS policy:
+  //No 'Access-Control-Allow-Origin' header is present on the requested resource.
 
-    let headers = new HttpHeaders({
-      Authorization: basicAuthHeaderString,
-    });
-
-    return this.http.get<HelloWorldBean>(
-      `http://localhost:8080/hello-world/path-variable/${name}`,
-      {headers}
-    );
-    //console.log("Execute Hello World BEAN Service")
-  }
-  createBasicAuthenticationHttpHeader() {
-    let username = 'craig';
-    let password = 'puppy';
-    let basicAuthHeaderString =
-      'Basic ' + window.btoa(username + ':' + password);
-    return basicAuthHeaderString;
-  }
->>>>>>> b5a13028f9b171676dcd826ab8e2b06e425ed18f
+  //Access to XMLHttpRequest at 'http://localhost:8080/hello-world/path-variable/in28minutes' from origin 'http://localhost:4200'
+  //has been blocked by CORS policy:
+  //Response to preflight request doesn't pass
+  //access control check: It does not have HTTP ok status
 }
-
-//Access to XMLHttpRequest at 'http://localhost:8080/hello-world/path-variable/craig'
-//from origin 'http://localhost:4200' has been blocked by CORS policy:
-//No 'Access-Control-Allow-Origin' header is present on the requested resource.

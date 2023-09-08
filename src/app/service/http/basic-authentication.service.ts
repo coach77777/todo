@@ -18,7 +18,6 @@ export class BasicAuthenticationService {
 
     let headers = new HttpHeaders({
 
-
         Authorization: basicAuthHeaderString
       })
 
